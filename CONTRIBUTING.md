@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-Thank you for your interest in contributing to Emission!
+Thank you for your interest in contributing to **Emission**!
 
 **Project Status: Experimental and Under Development**
 
