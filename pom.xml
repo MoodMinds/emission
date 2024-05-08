@@ -23,21 +23,18 @@
             <groupId>org.moodminds.traverse</groupId>
             <artifactId>traverse-streams</artifactId>
             <version>0.1</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.moodminds.reactive</groupId>
             <artifactId>reactive-streams</artifactId>
             <version>0.1</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.reactivestreams</groupId>
             <artifactId>reactive-streams</artifactId>
             <version>1.0.4</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
