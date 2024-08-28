@@ -33,35 +33,35 @@ public interface Emittable<V, E extends Exception> extends TraverseSupport<V, E>
         return new Emittable<V, E>() {
             @Override public void subscribe(Subscriber<? super V, ? super E> subscriber, KeyValue<?, ?>... ctx) {
                 requireNonNull(subscriber); throw new SubscribeSupportException("Synchronous traversal only."); }
-            @Override public void subscribe(Subscriber<? super V, ? super E> subscriber, Association<Object, Object, ?> ctx) {
+            @Override public void subscribe(Subscriber<? super V, ? super E> subscriber, Association<?, ?, ?> ctx) {
                 requireNonNull(subscriber); requireNonNull(ctx); throw new SubscribeSupportException("Synchronous traversal only."); }
             @Override public void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, KeyValue<?, ?>... ctx) {
                 requireNonNull(subscriber); throw new SubscribeSupportException("Synchronous traversal only."); }
-            @Override public void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, Association<Object, Object, ?> ctx) {
+            @Override public void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, Association<?, ?, ?> ctx) {
                 requireNonNull(subscriber); requireNonNull(ctx); throw new SubscribeSupportException("Synchronous traversal only."); }
             @Override public <H1 extends Exception, H2 extends Exception> boolean sequence(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2 {
                 return traverseSupport.sequence(traverse, ctx); }
-            @Override public <H1 extends Exception, H2 extends Exception> boolean sequence(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2 {
+            @Override public <H1 extends Exception, H2 extends Exception> boolean sequence(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<?, ?, ?> ctx) throws E, H1, H2 {
                 return traverseSupport.sequence(traverse, ctx); }
             @Override public <H1 extends Exception, H2 extends Exception> boolean traverse(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2 {
                 return traverseSupport.traverse(traverse, ctx); }
-            @Override public <H1 extends Exception, H2 extends Exception> boolean traverse(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2 {
+            @Override public <H1 extends Exception, H2 extends Exception> boolean traverse(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<?, ?, ?> ctx) throws E, H1, H2 {
                 return traverseSupport.traverse(traverse, ctx); }
             @Override public <H1 extends Exception, H2 extends Exception> boolean parallel(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2 {
                 return traverseSupport.parallel(traverse, ctx); }
-            @Override public <H1 extends Exception, H2 extends Exception> boolean parallel(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2 {
+            @Override public <H1 extends Exception, H2 extends Exception> boolean parallel(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<?, ?, ?> ctx) throws E, H1, H2 {
                 return traverseSupport.parallel(traverse, ctx); }
             @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean sequence(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2, H3 {
                 return traverseSupport.sequence(traverse, ctx); }
-            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean sequence(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2, H3 {
+            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean sequence(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<?, ?, ?> ctx) throws E, H1, H2, H3 {
                 return traverseSupport.sequence(traverse, ctx); }
             @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean traverse(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2, H3 {
                 return traverseSupport.traverse(traverse, ctx); }
-            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean traverse(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2, H3 {
+            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean traverse(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<?, ?, ?> ctx) throws E, H1, H2, H3 {
                 return traverseSupport.traverse(traverse, ctx); }
             @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean parallel(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2, H3 {
                 return traverseSupport.parallel(traverse, ctx); }
-            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean parallel(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2, H3 {
+            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean parallel(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<?, ?, ?> ctx) throws E, H1, H2, H3 {
                 return traverseSupport.parallel(traverse, ctx); }
         };
     }
@@ -78,35 +78,35 @@ public interface Emittable<V, E extends Exception> extends TraverseSupport<V, E>
         return new Emittable<V, E>() {
             @Override public void subscribe(Subscriber<? super V, ? super E> subscriber, KeyValue<?, ?>... ctx) {
                 subscribeSupport.subscribe(subscriber, ctx); }
-            @Override public void subscribe(Subscriber<? super V, ? super E> subscriber, Association<Object, Object, ?> ctx) {
+            @Override public void subscribe(Subscriber<? super V, ? super E> subscriber, Association<?, ?, ?> ctx) {
                 subscribeSupport.subscribe(subscriber, ctx); }
             @Override public void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, KeyValue<?, ?>... ctx) {
                 subscribeSupport.subscribe(subscriber, ctx); }
-            @Override public void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, Association<Object, Object, ?> ctx) {
+            @Override public void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, Association<?, ?, ?> ctx) {
                 subscribeSupport.subscribe(subscriber, ctx); }
             @Override public <H1 extends Exception, H2 extends Exception> boolean sequence(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2 {
                 requireNonNull(traverse); throw new TraverseSupportException("Asynchronous subscription only."); }
-            @Override public <H1 extends Exception, H2 extends Exception> boolean sequence(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2 {
+            @Override public <H1 extends Exception, H2 extends Exception> boolean sequence(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<?, ?, ?> ctx) throws E, H1, H2 {
                 requireNonNull(traverse); requireNonNull(ctx); throw new TraverseSupportException("Asynchronous subscription only."); }
             @Override public <H1 extends Exception, H2 extends Exception> boolean traverse(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2 {
                 requireNonNull(traverse); throw new TraverseSupportException("Asynchronous subscription only."); }
-            @Override public <H1 extends Exception, H2 extends Exception> boolean traverse(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2 {
+            @Override public <H1 extends Exception, H2 extends Exception> boolean traverse(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<?, ?, ?> ctx) throws E, H1, H2 {
                 requireNonNull(traverse); requireNonNull(ctx); throw new TraverseSupportException("Asynchronous subscription only."); }
             @Override public <H1 extends Exception, H2 extends Exception> boolean parallel(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2 {
                 requireNonNull(traverse); throw new TraverseSupportException("Asynchronous subscription only."); }
-            @Override public <H1 extends Exception, H2 extends Exception> boolean parallel(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2 {
+            @Override public <H1 extends Exception, H2 extends Exception> boolean parallel(Executable1Throwing2<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2> traverse, Association<?, ?, ?> ctx) throws E, H1, H2 {
                 requireNonNull(traverse); requireNonNull(ctx); throw new TraverseSupportException("Asynchronous subscription only."); }
             @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean sequence(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2, H3 {
                 requireNonNull(traverse); throw new TraverseSupportException("Asynchronous subscription only."); }
-            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean sequence(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2, H3 {
+            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean sequence(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<?, ?, ?> ctx) throws E, H1, H2, H3 {
                 requireNonNull(traverse); requireNonNull(ctx); throw new TraverseSupportException("Asynchronous subscription only."); }
             @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean traverse(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2, H3 {
                 requireNonNull(traverse); throw new TraverseSupportException("Asynchronous subscription only."); }
-            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean traverse(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2, H3 {
+            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean traverse(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<?, ?, ?> ctx) throws E, H1, H2, H3 {
                 requireNonNull(traverse); requireNonNull(ctx); throw new TraverseSupportException("Asynchronous subscription only."); }
             @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean parallel(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, KeyValue<?, ?>... ctx) throws E, H1, H2, H3 {
                 requireNonNull(traverse); throw new TraverseSupportException("Asynchronous subscription only."); }
-            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean parallel(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<Object, Object, ?> ctx) throws E, H1, H2, H3 {
+            @Override public <H1 extends Exception, H2 extends Exception, H3 extends Exception> boolean parallel(Executable1Throwing3<? super Traverser<? extends V, ? extends E>, ? extends H1, ? extends H2, ? extends H3> traverse, Association<?, ?, ?> ctx) throws E, H1, H2, H3 {
                 requireNonNull(traverse); requireNonNull(ctx); throw new TraverseSupportException("Asynchronous subscription only."); }
         };
     }
