@@ -3,7 +3,7 @@ package org.moodminds.emission;
 import org.moodminds.function.Evaluable1Throwing1;
 
 /**
- * This object represents a resource that supports both synchronous and asynchronous execution, as indicated
+ * This object represents a resource that defines both synchronous and asynchronous execution, as indicated
  * by {@link Emittable}. It must be either handled or explicitly refused to release the underlying resource.
  * The emitted {@link R values} may act as proxying accessors to the underlying resource's values and may remain alive
  * only during their handling, becoming disposable afterward. Consequently, the designated handler is responsible
